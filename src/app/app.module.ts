@@ -1,14 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { AppComponent, InnerComponent } from './app.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InnerComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CommonModule,
+    RouterModule.forRoot([
+      {
+        path: 'path1',
+        component: InnerComponent
+      },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
